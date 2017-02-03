@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		{
+		String name = JOptionPane.showInputDialog("What is your name?");
+		System.out.print("Heh, ");
+		System.out.println(name);
+		System.out.print("Sounds like a faggot");
+		System.exit(0);
+		}
+		
+	}
+}

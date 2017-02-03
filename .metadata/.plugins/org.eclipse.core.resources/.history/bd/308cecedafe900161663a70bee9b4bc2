@@ -1,6 +1,5 @@
 import javax.swing.JOptionPane;
 
-
 public class HelloWorld {
 
 	public static void main(String[] args) {
@@ -15,8 +14,6 @@ public class HelloWorld {
 		String givenname = JOptionPane.showInputDialog("Given Name");
 		System.out.print("Thanks! My new name is now ");
 		System.out.println(givenname);
-		System.out.println("There is no meaning to life");
-		System.out.println("Goodbye Cruel World");
 		System.exit(0);
 		}
 		
