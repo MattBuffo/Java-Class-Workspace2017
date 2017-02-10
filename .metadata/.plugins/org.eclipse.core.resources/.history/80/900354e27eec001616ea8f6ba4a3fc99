@@ -1,0 +1,15 @@
+
+public class MeterConversion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//declare variable
+		double meters;
+		//initialize variable
+		meters = 3.0; 
+		System.out.println(3.28084*meters + "Feet");
+		System.out.println(39.3701*meters + "Inches");
+		System.out.println(0.000621371*meters + "Miles");
+	}
+
+}
