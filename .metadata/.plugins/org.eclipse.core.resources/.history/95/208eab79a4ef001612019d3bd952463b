@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class FastFood {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner order = new Scanner(System.in);
+		final double BURGER_PRICE = 2.99;
+		final double FRY_PRICE = 0.99;
+		final double SODA_PRICE = 1.49;
+		double total = 0;
+		System.out.println("How many burgers?");
+		total += BURGER_PRICE * order.nextInt();
+		System.out.println(total);
+		order.close();
+		
+	}
+
+}

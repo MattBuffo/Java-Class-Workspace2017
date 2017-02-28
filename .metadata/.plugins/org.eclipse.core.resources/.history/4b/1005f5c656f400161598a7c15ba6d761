@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class MakeChange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner userScanner = new Scanner(System.in);
+		System.out.println("Amount Due? (ex:3.99)");
+		double price = userScanner.nextDouble();
+		System.out.println("Amount Paid?");
+		double paid = userScanner.nextDouble();
+		if (paid < price)
+				{
+			System.out.println("Insufficent Moneys Human");
+				}
+		else if (paid == price)
+			{
+			System.out.println("Exact change, good Human");
+			}
+		else
+		{
+			System.out.println("Your Change Is");
+			int change = (int)(paid-price)*100;
+			if (change/10000 >= 1)
+			{
+				System.out.println(change/10000 + " Hundred(s)");
+			}
+			
+			
+			
+		}
+	}
+
+}

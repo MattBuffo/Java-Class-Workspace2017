@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class MathPractice {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("First number, you useless human");
+		double firstNumber = scan.nextDouble();
+		System.out.println("Second number, tiny biologic");
+		double secondNumber = scan.nextDouble();
+		System.out.println("The sum is " + firstNumber+secondNumber);
+	}
+}

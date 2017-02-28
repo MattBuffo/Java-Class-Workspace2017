@@ -1,0 +1,12 @@
+
+public class MathExpessions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double xVal = 1.00;
+		double yVal = 2.00;
+		double z = -2*xVal - yVal;
+		System.out.println(z);
+	}
+
+}

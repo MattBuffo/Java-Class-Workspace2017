@@ -1,0 +1,11 @@
+
+public class MathExpessions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double F = 32;
+		double C = (9/5)*(F-32);
+		System.out.println(C);
+	}
+
+}

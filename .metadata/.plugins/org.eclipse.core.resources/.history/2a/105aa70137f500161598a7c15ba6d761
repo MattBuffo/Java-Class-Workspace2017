@@ -1,0 +1,13 @@
+
+public class MathExpessions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double a =1;
+		double b=2;
+		double c=1;
+		double x = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/ (2*a);
+		System.out.println(x);
+	}
+
+}
