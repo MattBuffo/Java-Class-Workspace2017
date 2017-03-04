@@ -46,3 +46,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.core.resources/.projects/Fast Food/.markers.snap
+*.snap
