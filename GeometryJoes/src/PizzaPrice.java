@@ -24,13 +24,14 @@ public class PizzaPrice {
 	final double REGULAR_LARGE_TOPPING = Math.sqrt(REGULAR_TOPPING_PRICE*LARGE_SIZE);
 	final double REGULAR_MEDIUM_TOPPING = Math.sqrt(REGULAR_TOPPING_PRICE*MEDIUM_SIZE);
 	final double REGULAR_SMALL_TOPPING = Math.sqrt(REGULAR_TOPPING_PRICE*SMALL_SIZE);
-	final double PREMIUM_LARGE_TOPPING = Math.sqrt(0.79*LARGE_SIZE);
+	final double PREMIUM_LARGE_TOPPING = Math.sqrt(PREMIUM_TOPPING_PRICE*LARGE_SIZE);
 	final double PREMIUM_MEDUIM_TOPPING = Math.sqrt(PREMIUM_TOPPING_PRICE*MEDIUM_SIZE);
 	final double PREMIUM_SMALL_TOPPING = Math.sqrt(PREMIUM_TOPPING_PRICE*SMALL_SIZE);
 	final double TAX_RATE = 0.07;
+	final double DELIVERY_RATE = 0.10;
 	//Manual Variable Definition
 	 String customerName = "G. Hopper";
-	 String pizzaOneName = "large mushroom";
+	 String pizzaOneName = "Medium Cheese";
 	 String pizzaTwoName = "null";
 	 String pizzaThreeName = "null";
 	 int pizzaOneQuantity = 3;
@@ -62,16 +63,138 @@ public class PizzaPrice {
 	 subtotal = (pizzaOnePrice + pizzaTwoPrice + pizzaThreePrice);
 	 //Tax Calculations
 	 tax = (TAX_RATE)*(subtotal);
+	 subtotal += tax;
 	 //Delivery Charge
-	 delivery = Math.min(subtotal, 5.00);
+	 delivery = Math.min(DELIVERY_RATE*subtotal, 5.00);
 	 //Total Calculation
-	 total = subtotal + tax + delivery;
-	 //Prints
+	 total = subtotal + delivery;
+	 //Prints for Customer One
 	 System.out.println("Thank You for Eating at Geometry Joe's!");
 	 System.out.println("Customer " + customerName);
-	 System.out.printf("%-1.0f%-10.0s%n", pizzaOneQuantity, pizzaOneName);
-	 System.out.println(total);
-
+	 System.out.printf("%-2d%-15s%42.2f\n", pizzaOneQuantity, pizzaOneName, pizzaOnePrice);
+	 System.out.printf("Tax:%55.2f\n", tax);
+	 System.out.printf("Delivery:%50.2f\n", delivery);
+	 System.out.printf("Total:%53.2f\n\n\n\n", total);
+	 
+	 
+	 
+	 
+	 
+	 
+	 //Next Customer; Gates
+	 customerName = "B. Gates";
+	 pizzaOneName = "Small Veggie";
+	 pizzaOneQuantity = 2;
+	 pizzaOneRegToppings = 1;
+	 pizzaOnePremToppings = 2;
+	 pizzaTwoName = "Large Meat Lover";
+	 pizzaTwoQuantity = 1;
+	 pizzaTwoRegToppings = 2;
+	 pizzaTwoPremToppings = 1;
+	 //Pizza One Calculations 
+	 pizzaOnePrice = (pizzaOneQuantity) *(SMALL_PRICE);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOneRegToppings)*(REGULAR_SMALL_TOPPING);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOnePremToppings)*(PREMIUM_SMALL_TOPPING);
+	 //Pizza Two Calculations
+	 pizzaTwoPrice = (pizzaTwoQuantity) *(LARGE_PRICE);
+	 pizzaTwoPrice += (pizzaTwoQuantity)*(pizzaTwoRegToppings)*(REGULAR_LARGE_TOPPING);
+	 pizzaTwoPrice += (pizzaTwoQuantity)*(pizzaTwoPremToppings)*(PREMIUM_LARGE_TOPPING);
+	 //Subtotal Calculations
+	 subtotal = pizzaOnePrice + pizzaTwoPrice;
+	 //Tax
+	 tax = (TAX_RATE)*(subtotal);
+	 subtotal += tax;
+	 //Delivery Charge
+	 delivery = Math.min(DELIVERY_RATE*subtotal, 5.00);
+	 //Total Calculation
+	 total = subtotal + delivery;
+	 //Prints for Customer One
+	 System.out.println("Thank You for Eating at Geometry Joe's!");
+	 System.out.println("Customer " + customerName);
+	 System.out.printf("%-2d%-15s%42.2f\n", pizzaOneQuantity, pizzaOneName, pizzaOnePrice);
+	 System.out.printf("%-2d%-15s%41.2f\n", pizzaTwoQuantity, pizzaTwoName, pizzaTwoPrice);
+	 System.out.printf("Tax:%55.2f\n", tax);
+	 System.out.printf("Delivery:%50.2f\n", delivery);
+	 System.out.printf("Total:%53.2f\n\n\n\n", total);
+	 
+	 
+	 
+	 
+	 
+	 //Gosling 
+	 customerName = "J. Gosling";
+	 pizzaOneName = "Large Peperoni With Extra Cheese";
+	 pizzaOneQuantity = 1;
+	 pizzaOneRegToppings = 2;
+	 pizzaOnePremToppings = 0;
+	 pizzaTwoName = "Small Mushroom and Sausage";
+	 pizzaTwoQuantity = 2;
+	 pizzaTwoRegToppings = 2;
+	 pizzaTwoPremToppings = 0;
+	 pizzaThreeName = "Medium with Everything";
+	 pizzaThreeQuantity = 1;
+	 pizzaThreeRegToppings = 6;
+	 pizzaThreePremToppings = 4;
+	 //Pizza One Calculations 
+	 pizzaOnePrice = (pizzaOneQuantity) *(LARGE_PRICE);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOneRegToppings)*(REGULAR_LARGE_TOPPING);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOnePremToppings)*(PREMIUM_LARGE_TOPPING);
+	 //Pizza Two Calculations
+	 pizzaTwoPrice = (pizzaTwoQuantity) *(SMALL_PRICE);
+	 pizzaTwoPrice += (pizzaTwoQuantity)*(pizzaTwoRegToppings)*(REGULAR_SMALL_TOPPING);
+	 pizzaTwoPrice += (pizzaTwoQuantity)*(pizzaTwoPremToppings)*(PREMIUM_SMALL_TOPPING);
+	 // Pizza Three Calculations
+	 pizzaThreePrice = (pizzaThreeQuantity) *(MEDIUM_PRICE);
+	 pizzaThreePrice += (pizzaThreeQuantity)*(pizzaThreeRegToppings)*(REGULAR_MEDIUM_TOPPING);
+	 pizzaThreePrice += (pizzaThreeQuantity)*(pizzaThreePremToppings)*(PREMIUM_MEDUIM_TOPPING);
+	 //Subtotal Calculations
+	 subtotal = pizzaOnePrice + pizzaTwoPrice + pizzaThreePrice;
+	 //Tax
+	 tax = (TAX_RATE)*(subtotal);
+	 subtotal += tax;
+	 //Delivery Charge
+	 delivery = Math.min(DELIVERY_RATE*subtotal, 5.00);
+	 //Total Calculation
+	 total = subtotal + delivery;
+	 //Prints for Customer One
+	 System.out.println("Thank You for Eating at Geometry Joe's!");
+	 System.out.println("Customer " + customerName);
+	 System.out.printf("%-2d%-15s%25.2f\n", pizzaOneQuantity, pizzaOneName, pizzaOnePrice);
+	 System.out.printf("%-2d%-15s%31.2f\n", pizzaTwoQuantity, pizzaTwoName, pizzaTwoPrice);
+	 System.out.printf("%-2d%-15s%35.2f\n", pizzaThreeQuantity, pizzaThreeName, pizzaThreePrice);
+	 System.out.printf("Tax:%55.2f\n", tax);
+	 System.out.printf("Delivery:%50.2f\n", delivery);
+	 System.out.printf("Total:%53.2f\n\n\n\n", total);
+	 
+	 
+	 
+	 
+	 //Matt Buffo
+	 customerName = "M. Buffo";
+	 pizzaOneName = "Large Cheese";
+	 pizzaOneQuantity = 1;
+	 pizzaOneRegToppings = 0;
+	 pizzaOnePremToppings = 0;
+	 //Pizza One Calculations 
+	 pizzaOnePrice = (pizzaOneQuantity) *(LARGE_PRICE);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOneRegToppings)*(REGULAR_LARGE_TOPPING);
+	 pizzaOnePrice += (pizzaOneQuantity)*(pizzaOnePremToppings)*(PREMIUM_LARGE_TOPPING);
+	 //Subtotal Calculations
+	 subtotal = pizzaOnePrice;
+	 //Tax
+	 tax = (TAX_RATE)*(subtotal);
+	 subtotal += tax;
+	 //Delivery Charge
+	 delivery = Math.min(DELIVERY_RATE*subtotal, 5.00);
+	 //Total Calculation
+	 total = subtotal + delivery;
+	 //Prints for Customer One
+	 System.out.println("Thank You for Eating at Geometry Joe's!");
+	 System.out.println("Customer " + customerName);
+	 System.out.printf("%-2d%-15s%42.2f\n", pizzaOneQuantity, pizzaOneName, pizzaOnePrice);
+	 System.out.printf("Tax:%55.2f\n", tax);
+	 System.out.printf("Delivery:%50.2f\n", delivery);
+	 System.out.printf("Total:%53.2f\n\n\n\n", total);
 	}
 		
 }
