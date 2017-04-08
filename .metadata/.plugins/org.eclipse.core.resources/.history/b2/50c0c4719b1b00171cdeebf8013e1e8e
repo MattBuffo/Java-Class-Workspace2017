@@ -1,0 +1,24 @@
+
+import java.util.Scanner;
+public class Sum {
+
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Input the desired minimum");
+		double min = in.nextInt();
+		System.out.println("Input the desired maximum");
+		double max = in.nextInt();
+		double total = 0;
+		/* innefficent way with loop
+		while(max >= min){
+			total += max;
+			max --;
+		}
+		*/
+		
+		// more efficent way with formula
+		total = ((max + min)/2) * (max-min);
+		System.out.println(total);
+		
+	}
+}
