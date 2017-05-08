@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class LoopActivity {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		findFractions(in);
+		
+	}
+
+	public static void findFractions(Scanner in){
+		int targetNumerator = 0;
+		int targetDenominator = 0;
+		String closestFractionAbove = "oops";
+		String closestFractionBelow = "oops";
+		double closestAbove = 0;
+		double closestBelow = 0;
+		System.out.println("Input numerator");
+		targetNumerator = in.nextInt();
+		System.out.println("Input denominator");
+		targetDenominator = in.nextInt();
+		for(double d = 0; d <= targetDenominator; d++){
+			for(double n = 0; n < targetDenominator; n++){
+				if( (((double)targetNumerator/(double)targetDenominator) - n/d) < (((double)targetNumerator/(double)targetDenominator) - closestBelow)){
+					closestBelow = n/d;
+					closestFractionBelow = n + "/" + d;
+					System.out.println(closestFractionBelow);
+				}
+			}
+		}
+		System.out.println(closestFractionBelow);
+	}
+}

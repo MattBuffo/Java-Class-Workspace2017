@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class LoopActivity {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		findFractions(in);
+		
+	}
+
+	public static void findFractions(Scanner in){
+		double targetNumerator = 0;
+		double targetDenominator = 0;
+		String closestFractionAbove = "oops";
+		String closestFractionBelow = "oops";
+		double closestAbove = 0;
+		double closestBelow = 0;
+		System.out.println("Input numerator");
+		targetNumerator = in.nextInt();
+		System.out.println("Input denominator");
+		targetDenominator = in.nextInt();
+		for(double d = 1; d <= 100; d++){
+			for(double n = 1; n < d; n++){
+				if( ((targetNumerator/targetDenominator) > n/d) &&((targetNumerator/targetDenominator) - n/d) < ((targetNumerator/targetDenominator) - closestBelow)){
+					closestBelow = n/d;
+					closestFractionBelow = n + "/" + d;
+				}
+				if( ((targetNumerator/targetDenominator) < n/d) &&(Math.abs((n/d) - (targetNumerator/targetDenominator))) < (Math.abs( closestAbove - (targetNumerator/targetDenominator)))){
+					closestAbove = n/d;
+					closestFractionAbove = n + "/" + d;
+				}
+			}
+		}
+		System.out.println(closestFractionBelow);
+		System.out.println(closestFractionAbove);
+	}
+	
+	public static void squareRoot(Scanner in){
+		System.out.println("Input Desired Number");
+		double targetNumber = in.nextDouble();
+		double testNumber = Math.abs((targetNumber - 1)/2);
+		while(Math.abs(testNumber - ((testNumber + targetNumber/testNumber)/2)) >= 0.0001){
+			targetNumber = (testNumber + targetNumber/testNumber)/2;
+		}
+		System.out.println(targetNumber);
+	}
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class LoopActivity {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		
+		
+	}
+
+	public static void findFractions(Scanner in){
+		int targetNumerator = 0;
+		int targetDenominator = 0;
+		System.out.println("Input numerator");
+		targetNumerator = in.nextInt();
+		System.out.println("Input denominator");
+		targetDenominator = in.nextInt();
+		for(int i = 0; i <= targetDenominator; i++){
+			for(int a = 0; a < targetDenominator; )
+		}
+		
+	}
+}
