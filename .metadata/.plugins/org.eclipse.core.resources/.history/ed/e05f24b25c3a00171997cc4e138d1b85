@@ -27,14 +27,14 @@ public class Dictionary
     int wordCounter = 0;
     int fiveLetterCounter = 0;
     String line = "";
-    while(in.hasNextLine()){ // scans the file and increases wordCounter for each word, also checks for five letters and increases fiveLetterCounter
+    while(in.hasNextLine()){
     	line = in.nextLine();
     	if(line.length() == 5){
     		fiveLetterCounter ++;
     	}
     	wordCounter ++;
     }
-    System.out.printf("%-55s%30d\n","Number of Words:",wordCounter); //output
+    System.out.printf("%-55s%30d\n","Number of Words:",wordCounter); 
     System.out.printf("%-55s%30d\n","Number of Five Letter Words:", fiveLetterCounter);
   }
    
@@ -57,17 +57,17 @@ public class Dictionary
 	  int vowel0 = 0;
 	  String line = "";
 	  String zeroVowel = "";
-	  while(in.hasNextLine()){ // scans each line and tracks the number of vowels in that word 
+	  while(in.hasNextLine()){
 		  int vowelTracker = 0;
 		  line = in.nextLine();
 		  line = line.toLowerCase();
 		  if(line.length() == 5){
-			  for(int i = 0; i < line.length(); i ++){ // counts the number of vowels 
+			  for(int i = 0; i < line.length(); i ++){
 				  if(line.charAt(i) == 'a' || line.charAt(i) == 'e' || line.charAt(i) == 'i' || line.charAt(i) == 'o' || line.charAt(i)== 'u'){
 					  vowelTracker ++;
 				  		}
 				  }
-			  switch(vowelTracker) { //increases the corresponding tracking number and adds the word to the zero string if it has zero vowels
+			  switch(vowelTracker) {
 			  case 1: vowel1 ++;
 			  break;
 			  case 2: vowel2 ++;
@@ -84,7 +84,7 @@ public class Dictionary
 			  }
 		  }
 	  }
-	  System.out.printf("%-55s%30d\n","Number of Five Letter Words with Zero Vowels:", vowel0); // output
+	  System.out.printf("%-55s%30d\n","Number of Five Letter Words with Zero Vowels:", vowel0);
 	  System.out.printf("%-55s%30d\n","Number of Five Letter Words with One Vowel:", vowel1);
 	  System.out.printf("%-55s%30d\n","Number of Five Letter Words with Two Vowels:", vowel2);
 	  System.out.printf("%-55s%30d\n","Number of Five Letter Words with Three Vowels:", vowel3);
@@ -108,7 +108,7 @@ public class Dictionary
 	  int longest = 0;
 	  int shortest = 1000;
 	  String line = "";
-	  while(in.hasNextLine()){ //scans each line and checks against longest and shortest 
+	  while(in.hasNextLine()){
 		  line = in.nextLine();
 		  if(line.length() > longest){
 			  longest = line.length();
@@ -116,7 +116,7 @@ public class Dictionary
 		  if(line.length() < shortest)
 			  shortest = line.length();
 	  }
-	  System.out.printf("%-55s%30d\n","The Largest Amount of Letters in a Word Is:", longest); //output
+	  System.out.printf("%-55s%30d\n","The Largest Amount of Letters in a Word Is:", longest);
 	  System.out.printf("%-55s%30d\n","The Smallest Amount of Letters in a Word Is:", shortest);
   }
   
@@ -132,11 +132,11 @@ public class Dictionary
 	  in = new Scanner(fWebsters); 
 	  String line = "";
 	  System.out.println("The Words that Contain Java Are:");
-	  while(in.hasNextLine()){	//scans each line looking for "java"
+	  while(in.hasNextLine()){
 		  line = in.nextLine();
 		  line = line.toLowerCase();
 		  if (line.contains("java")){
-			  line = line.replace("java", "JAVA"); // replaces "java" with "JAVA" and outputs
+			  line = line.replace("java", "JAVA");
 			  System.out.println(line);
 		  }
 	  }
@@ -148,7 +148,7 @@ public class Dictionary
 	//Add file to project folder
     fWebsters = new File ("websters_dictionary.txt");
     
-    //Analyze words, runs all other methods
+    //Analyze words
     countWords();
     countVowels();
     longestAndShortestCount();
